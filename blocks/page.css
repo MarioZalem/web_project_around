@@ -1,0 +1,34 @@
+/* Estilos base - podrían ir en normalize.css */
+body {
+  background-color: black;
+  margin: 0;
+}
+
+/* Bloque principal page */
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 45px 0 60px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Media queries */
+@media screen and (max-width: 950px) {
+  .page {
+    padding: 45px 25px 60px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .page {
+    padding: 35px 19px 45px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page {
+    padding: 28px 0 36px;
+  }
+}

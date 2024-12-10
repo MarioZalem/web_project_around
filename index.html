@@ -11,7 +11,7 @@
     />
     <link rel="icon" href="favicon.ico" type="image/png" />
     <title>Galería de paisajes de EEUU</title>
-    <link rel="stylesheet" href="./pages/styles.css" />
+    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
     <div class="page">
@@ -28,18 +28,24 @@
         <li class="content__card">
           <img src="" alt="" class="content__card-image" />
           <h3 class="content__card-title"></h3>
-          <button type="button" class="content__card-button-trash">
+          <button
+            type="button"
+            class="content__card-button content__card-button_type_trash"
+          >
             <img
               src="./images/trash.svg"
               alt="Trash button"
-              class="content__card-button-icon content__card-button-icon_type_trash"
+              class="content__card-button-image content__card-button-image_type_trash"
             />
           </button>
-          <button type="button" class="content__card_button-like">
+          <button
+            type="button"
+            class="content__card-button content__card-button_type_like"
+          >
             <img
               src="./images/heart.svg"
               alt="Like button"
-              class="content__card-button-icon content__card-button-icon_type_like"
+              class="content__card-button-image content__card-button-image_type_like"
             />
           </button>
         </li>
@@ -51,7 +57,7 @@
           <h1 class="profile__name">Jacques Cousteau</h1>
           <button type="button" class="profile__edit-button">
             <img
-              src="./images/edit-button.svg"
+              src="./images/edit-btn.svg"
               alt="Edit profile"
               class="profile__edit-button-img"
             />
@@ -60,7 +66,7 @@
         <h2 class="profile__job">Explorador</h2>
         <button type="button" class="profile__add-button">
           <img
-            src="./images/add-button.svg"
+            src="./images/add-btn.svg"
             alt="Add button"
             class="profile__add-button-img"
           />
@@ -310,7 +316,7 @@
                 required
               />
             </fieldset>
-            <button type="submit" class="popup__submit-button">Crear</button>
+            <button type="submit" class="popup__button-submit">Guardar</button>
           </form>
         </div>
         <div class="popup__overlay"></div>
@@ -334,6 +340,6 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2024 Around The U.S.</p>
     </footer>
-    <script src="./index.js"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

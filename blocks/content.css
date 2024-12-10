@@ -1,0 +1,78 @@
+.content {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.content__list {
+  max-width: 880px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 17px;
+  row-gap: 20px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.content__card {
+  width: 282px;
+  height: 361px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.content__card-image {
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+}
+
+.content__card-button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+}
+
+.content__card-button_type_trash {
+  background-image: url(/images/trash.svg);
+  background-repeat: no-repeat;
+  top: 18px;
+}
+
+.content__card-button_type_trash:hover {
+  opacity: 0.6;
+}
+
+.content__card-button_type_like {
+  background-image: url(/images/heart.svg);
+  background-repeat: no-repeat;
+  bottom: 26px;
+}
+
+.content__card-button_type_like:hover {
+  opacity: 0.5;
+}
+
+.content__card-button_type_like:active {
+  background-image: url(/images/heart-filled.svg);
+  opacity: 1;
+}
+
+.content__card-title {
+  font-family: "Inter Black", sans-serif;
+  font-size: 24px;
+  margin: 0;
+  position: absolute;
+  left: 20px;
+  bottom: 26px;
+  max-width: 220px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
