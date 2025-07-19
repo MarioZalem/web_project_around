@@ -1,3 +1,31 @@
+// === Datos iniciales ===
+const initialCards = [
+  {
+    name: "Valle de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+  },
+];
+
 // === Selectores de elementos del DOM ===
 const profile = {
   editButton: document.querySelector(".profile__edit-button"),
@@ -30,44 +58,6 @@ const cardTemplate = document.querySelector("#card-template").content;
 // === Funciones auxiliares ===
 const openPopup = (popup) => popup.classList.add("popup_opened");
 const closePopup = (popup) => popup.classList.remove("popup_opened");
-
-// === Eventos globales ===
-document
-  .querySelectorAll(".content__card-button_type_trash")
-  .forEach((button) => {
-    button.addEventListener("click", (evt) => {
-      const card = evt.target.closest(".content__card");
-      if (card) card.remove();
-    });
-  });
-
-// Event listener para botones de like existentes
-document
-  .querySelectorAll(".content__card-button_type_like")
-  .forEach((button) => {
-    button.addEventListener("click", (evt) => {
-      // Usar currentTarget en lugar de target para asegurar que sea el botón
-      evt.currentTarget.classList.toggle("content__card-button_liked");
-    });
-  });
-// Event listener para imágenes existentes
-document.querySelectorAll(".content__card-image").forEach((cardImage) => {
-  cardImage.addEventListener("click", () => {
-    const popupImage = popups.image.querySelector(".popup__image");
-    const popupText = popups.image.querySelector(".popup__text");
-
-    popupImage.src = cardImage.src;
-    popupImage.alt = cardImage.alt;
-    popupText.textContent = cardImage.alt;
-
-    openPopup(popups.image);
-  });
-});
-
-document.querySelectorAll(".popup__close-button").forEach((button) => {
-  const popup = button.closest(".popup");
-  button.addEventListener("click", () => closePopup(popup));
-});
 
 // === Función para crear una tarjeta ===
 function createCard(title, imageUrl) {
@@ -110,6 +100,20 @@ function createCard(title, imageUrl) {
   return cardElement;
 }
 
+// === Cargar tarjetas iniciales ===
+function loadInitialCards() {
+  initialCards.forEach((card) => {
+    const cardElement = createCard(card.name, card.link);
+    cardsList.appendChild(cardElement);
+  });
+}
+
+// === Eventos para cerrar popups ===
+document.querySelectorAll(".popup__close-button").forEach((button) => {
+  const popup = button.closest(".popup");
+  button.addEventListener("click", () => closePopup(popup));
+});
+
 // === Eventos para perfil ===
 profile.editButton.addEventListener("click", () => {
   inputs.name.value = profile.name.textContent;
@@ -151,3 +155,6 @@ document.addEventListener("keydown", (evt) => {
     if (openedPopup) closePopup(openedPopup);
   }
 });
+
+// === Inicializar la aplicación ===
+loadInitialCards();
