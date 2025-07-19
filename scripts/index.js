@@ -79,7 +79,7 @@ function createCard(title, imageUrl) {
 
   // Evento para like
   likeButton.addEventListener("click", (evt) =>
-    evt.currentTarget.classList.toggle("content__card-button_liked")
+    evt.target.classList.toggle("content__card-button_liked")
   );
 
   // Evento para borrar
