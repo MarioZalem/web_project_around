@@ -78,6 +78,6 @@
 }
 
 .content__card-button_liked {
-  background-image: url(/images/heart-filled.svg);
+  background-image: url(~/images/heart-filled.svg);
   opacity: 1;
 }
