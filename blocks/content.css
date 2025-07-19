@@ -76,3 +76,8 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+.content__card-button_liked {
+  background-image: url(/images/heart-filled.svg);
+  opacity: 1;
+}

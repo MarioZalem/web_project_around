@@ -16,6 +16,15 @@
   max-width: calc(100% - 180px);
 }
 
+.popup_type_image .popup__container {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: 75vw;
+  max-height: 75vh;
+  padding: 0;
+}
+
 .popup__image {
   max-width: 100%;
   object-fit: contain;

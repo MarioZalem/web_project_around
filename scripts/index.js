@@ -41,6 +41,29 @@ document
     });
   });
 
+// Event listener para botones de like existentes
+document
+  .querySelectorAll(".content__card-button_type_like")
+  .forEach((button) => {
+    button.addEventListener("click", (evt) => {
+      // Usar currentTarget en lugar de target para asegurar que sea el botón
+      evt.currentTarget.classList.toggle("content__card-button_liked");
+    });
+  });
+// Event listener para imágenes existentes
+document.querySelectorAll(".content__card-image").forEach((cardImage) => {
+  cardImage.addEventListener("click", () => {
+    const popupImage = popups.image.querySelector(".popup__image");
+    const popupText = popups.image.querySelector(".popup__text");
+
+    popupImage.src = cardImage.src;
+    popupImage.alt = cardImage.alt;
+    popupText.textContent = cardImage.alt;
+
+    openPopup(popups.image);
+  });
+});
+
 document.querySelectorAll(".popup__close-button").forEach((button) => {
   const popup = button.closest(".popup");
   button.addEventListener("click", () => closePopup(popup));
@@ -66,7 +89,7 @@ function createCard(title, imageUrl) {
 
   // Evento para like
   likeButton.addEventListener("click", (evt) =>
-    evt.target.classList.toggle("content__card-button_liked")
+    evt.currentTarget.classList.toggle("content__card-button_liked")
   );
 
   // Evento para borrar
