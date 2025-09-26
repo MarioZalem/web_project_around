@@ -1,6 +1,6 @@
 # Around The U.S.
 
-## Project
+## Project Demo
 
 Experience the live project here: [Around The U.S. Interactive Gallery](https://mariozalem.github.io/web_project_around/)
 
